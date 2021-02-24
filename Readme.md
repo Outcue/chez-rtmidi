@@ -4,27 +4,30 @@ An interface to RtMidi for Chez Scheme.
 ```scheme
 (import (rtmidi))
 
-(sdl-init SDL-INIT-VIDEO)
+(define midiout (rtmidi-out-create-default))
+(define channel 0)
 
-(define win
-  (sdl-create-window "chezscheme"
-                     SDL-WINDOWPOS-UNDEFINED
-                     SDL-WINDOWPOS-UNDEFINED
-                     640
-		     480))
-
-(define (event-loop)
-  (sdl-poll-event)
-  (cond
-    ((sdl-event-none?) (event-loop))
-    ((sdl-event-quit?) '())
+(cond 
+    ((zero? midiout)
+        (display "Unable to create default MIDI out."))
     (else
-      (event-loop))))
+        (let ([portcount (rtmidi-get-port-count midiout)])
 
-(event-loop)
-
-(sdl-destroy-window win)
-(sdl-quit)
+            (cond 
+                ((zero? portcount)
+                    (display "No output ports.\n"))
+                (else 
+                    (rtmidi-open-port midiout 0 (rtmidi-get-port-name midiout 0))
+                    (rtmidi-send-program-change midiout channel 5)
+                    (rtmidi-send-control-change midiout channel 7 10)
+                    (rtmidi-send-note-on midiout channel 64 90)
+                    (sleep (make-time 'time-duration (* 250 1000000) 0))))
+                    (rtmidi-send-note-off midiout channel 64 0)
+                    (rtmidi-close-port midiout))
+            
+        (rtmidi-out-free midiout)
+    )
+)
 ```
 
 
