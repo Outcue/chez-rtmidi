@@ -40,14 +40,14 @@ An interface to RtMidi for Chez Scheme.
 
 # Quickstart Guide
 
-0. Install [Chez Scheme](https://github.com/cisco/ChezScheme) and [RtMidi](https://github.com/thestk/rtmidi/).
+1. Install [Chez Scheme](https://github.com/cisco/ChezScheme) and [RtMidi](https://github.com/thestk/rtmidi/).
 
-1. Install Chez-RtMidi where the Chez Scheme system can find it.
+2. Add Chez-RtMidi to the Chez Scheme library path.
 ```bash
 export CHEZSCHEMELIBDIRS="/path/to/chez-rtmidi/lib:$CHEZSCHEMELIBDIRS"
 ```
 
-2. Run an example
+3. Run an example
 ```bash
 scheme --script ./simple.ss
 ```
