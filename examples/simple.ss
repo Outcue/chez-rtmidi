@@ -1,6 +1,7 @@
 (import (rtmidi))
 
 (define midiout (rtmidi-out-create-default))
+
 (define channel 0)
 
 (cond 
