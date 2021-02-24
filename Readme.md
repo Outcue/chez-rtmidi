@@ -47,7 +47,7 @@ An interface to RtMidi for Chez Scheme.
 export CHEZSCHEMELIBDIRS="/path/to/chez-rtmidi/lib:$CHEZSCHEMELIBDIRS"
 ```
 
-2. Start running the demos.
+2. Run an example
 ```bash
 scheme --script ./simple.ss
 ```
