@@ -33,11 +33,9 @@ An interface to RtMidi for Chez Scheme.
 
 # Features
 
-* Scheme style interface to RtMidi
-* Minimal overhead wrapping
+* Scheme-style interface to RtMidi
 * Full marshalling of Scheme data to C data
 * Lower level ftype interface provided
-* Developer friendly documentation
 
 
 # Quickstart Guide
@@ -53,5 +51,3 @@ export CHEZSCHEMELIBDIRS="/path/to/chez-rtmidi/lib:$CHEZSCHEMELIBDIRS"
 ```bash
 scheme --script ./simple.ss
 ```
-
-3. Read the [documentation](https://outcue.github.io/chez-rtmidi/).
