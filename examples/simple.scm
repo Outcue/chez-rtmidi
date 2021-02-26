@@ -15,7 +15,7 @@
                     (display "No output ports.\n"))
                 (else 
                     (rtmidi-open-port midiout 0 (rtmidi-get-port-name midiout 0))
-                    (rtmidi-send-program-change midiout channel 5)
+                    (rtmidi-send-program-change midiout channel 79)
                     (rtmidi-send-control-change midiout channel 7 10)
                     (rtmidi-send-note-on midiout channel 64 90)
                     (sleep (make-time 'time-duration (* 250 1000000) 0))))
