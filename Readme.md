@@ -49,5 +49,5 @@ export CHEZSCHEMELIBDIRS="/path/to/chez-rtmidi/lib:$CHEZSCHEMELIBDIRS"
 
 3. Run an example
 ```bash
-scheme --script ./simple.ss
+scheme --script ./simple.scm
 ```
